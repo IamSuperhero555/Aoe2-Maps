@@ -1,0 +1,609 @@
+/* Kubu by Superhero55 */
+
+/* Has Fixed Positions so One Player needs to use Odd Colour and Other needs to use Even Colour */
+
+/* Submitted with unbuildable terrain for map submission for Walhalla but removed */
+
+<PLAYER_SETUP>
+direct_placement
+
+	#const TEMP 278
+	#const WOODS 20
+	#const HORSE 814
+	#const STATUE 817
+	#const DLC_FENCE 1062
+	#const DLC_STORAGE 1081
+	#const DLC_AFRICANHUT_A 1082
+	#const FLOWER_BED 859
+	
+<LAND_GENERATION>
+base_terrain DIRT
+
+start_random
+	percent_chance 50 #define LEFT_RIGHT
+	percent_chance 50 #define RIGHT_LEFT
+end_random
+
+
+if LEFT_RIGHT /* For Top Location (Odd Colours) && For Bottom Location (Even Colours) */
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 1 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 3 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 5 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 7 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 2 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 4 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 6 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 8 0 0
+}
+endif
+
+if RIGHT_LEFT /* For Bottom Location (Odd Colours) && For Top Location (Even Colours) */
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 2 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 4 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 6 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 30
+left_border 55
+bottom_border 55
+land_position 55 15
+assign_to AT_COLOR 8 0 0
+}
+
+/* For Bottom Location (Even Colours) */
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 1 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 3 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 5 0 0
+}
+
+create_land {
+terrain_type DIRT
+base_size 15
+land_percent 15
+clumping_factor 20
+top_border 55
+right_border 55
+left_border 55
+bottom_border 55
+land_position 55 85
+assign_to AT_COLOR 7 0 0
+}
+endif
+
+
+create_land { 
+terrain_type FOREST 
+left_border    10
+right_border    10
+top_border    10
+bottom_border    10
+border_fuzziness 100
+base_size 10
+min_placement_distance 30
+number_of_tiles 10
+land_position 50 50
+set_avoid_player_start_areas
+}
+
+create_land { 
+	terrain_type DLC_SAVANNAH
+	land_percent 100
+	zone 1
+	other_zone_avoidance_distance 1
+} 
+
+create_land { 
+terrain_type PINE_FOREST 
+left_border    10
+right_border    10
+top_border    10
+bottom_border    10
+border_fuzziness 100
+base_size 10
+min_placement_distance 30
+number_of_tiles 10
+land_position 12 50
+set_avoid_player_start_areas
+}
+
+create_land { 
+
+terrain_type PINE_FOREST 
+left_border    10
+right_border    10
+top_border    10
+bottom_border    10
+border_fuzziness 100
+base_size 10
+min_placement_distance 30
+number_of_tiles 10
+land_position 88 50
+}
+
+<TERRAIN_GENERATION>
+
+create_terrain DIRT3 {
+base_terrain PINE_FOREST
+land_percent 100
+spacing_to_other_terrain_types 1
+number_of_clumps 9320
+}
+
+create_terrain DIRT2 {
+base_terrain FOREST
+land_percent 100
+spacing_to_other_terrain_types 1
+number_of_clumps 9320
+}
+
+
+create_terrain DLC_DRAGONFOREST
+{
+	base_terrain DLC_SAVANNAH
+	land_percent 11
+	number_of_clumps 120
+	set_scale_by_groups
+  spacing_to_other_terrain_types 7
+}
+
+create_terrain DLC_DRAGONFOREST
+{
+   base_terrain DIRT
+	land_percent 5
+	number_of_clumps 150
+	set_scale_by_groups
+	set_avoid_player_start_areas 18
+	spacing_to_other_terrain_types 0
+}
+
+create_terrain DLC_SAVANNAH {
+base_terrain DIRT3
+land_percent 100
+number_of_clumps 9320 
+terrain_mask 1
+}
+
+create_terrain DLC_SAVANNAH {
+base_terrain DIRT2
+land_percent 100
+number_of_clumps 9320 
+terrain_mask 1
+}
+
+create_terrain DLC_SAVANNAH {
+base_terrain DIRT
+land_percent 100
+number_of_clumps 9320 
+terrain_mask 1
+}
+
+
+<OBJECTS_GENERATION>
+create_object TOWN_CENTER
+{
+	set_place_for_every_player
+	min_distance_to_players 0
+	max_distance_to_players 0
+}
+if DEATH_MATCH
+	create_object FORTIFIED_WALL
+	{
+		set_place_for_every_player
+		min_distance_to_players 19
+		max_distance_to_players 19
+		actor_area 50
+		actor_area_radius 2
+		terrain_to_place_on DIRT
+	}
+else
+create_object WALL	{
+	min_distance_to_players 19
+	max_distance_to_players 19
+	set_place_for_every_player
+	actor_area 50
+	actor_area_radius 2
+	terrain_to_place_on DIRT
+}
+endif
+
+create_object VILLAGER
+{
+	set_place_for_every_player
+	min_distance_to_players 6
+	max_distance_to_players 6
+  	avoid_forest_zone 2
+}
+create_object SCOUT
+{
+	set_place_for_every_player
+	min_distance_to_players 7
+	max_distance_to_players 9
+  	avoid_forest_zone 1
+}
+if DEATH_MATCH
+else
+create_object SHEEP /* primary */
+{
+	number_of_objects 4
+	set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 6
+  	max_distance_to_players 6
+	find_closest
+   	avoid_forest_zone 1
+}
+create_object SHEEP /* secondary */
+{
+	number_of_objects 2
+	number_of_groups 2
+    set_loose_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+  min_distance_to_players 12
+	max_distance_to_players 12
+   avoid_forest_zone 1
+}
+
+create_object BOAR 
+{
+	number_of_objects 2
+	set_place_for_every_player
+	set_gaia_object_only
+  min_distance_to_players 16
+	max_distance_to_players 16
+  avoid_forest_zone 1
+}
+
+create_object FORAGE
+{
+	number_of_objects 6
+	set_tight_grouping
+	group_placement_radius 4
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 10
+	max_distance_to_players 11
+	max_distance_to_other_zones 3
+	min_distance_group_placement 6
+	avoid_forest_zone 3
+}
+
+create_object DEER	{
+set_place_for_every_player
+set_gaia_object_only
+number_of_objects 4
+set_loose_grouping
+avoid_forest_zone 1
+avoid_actor_area 66
+avoid_actor_area 67
+min_distance_to_players 12
+max_distance_to_players 13
+}
+endif
+
+create_object GOLD /* Primary */
+{
+  number_of_objects 5
+	group_placement_radius 3
+	set_tight_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 12
+	max_distance_to_players 14
+  	min_distance_group_placement 7
+	max_distance_to_other_zones 5
+	find_closest
+  	avoid_forest_zone 2
+  	actor_area 80
+	actor_area_radius 1
+}
+
+create_object GOLD /* Primary */
+{
+  number_of_objects 4
+	group_placement_radius 3
+	set_tight_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 12
+	max_distance_to_players 14
+  	min_distance_group_placement 7
+	max_distance_to_other_zones 5
+	find_closest
+  	avoid_forest_zone 2
+  	actor_area 80
+	actor_area_radius 1
+}
+
+create_object STONE /* Primary */
+{
+  number_of_objects 5
+	group_placement_radius 3
+	set_tight_grouping
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 12
+	max_distance_to_players 15
+	min_distance_group_placement 7
+	avoid_actor_area 1
+	avoid_forest_zone 2
+	actor_area 90
+	actor_area_radius 1
+}
+
+create_object GOLD /* extra */
+{
+	number_of_objects 5
+	number_of_groups 999
+	group_variance 1
+	set_tight_grouping
+	group_placement_radius 3
+	set_gaia_object_only
+	set_scaling_to_map_size
+	min_distance_group_placement 2
+	temp_min_distance_group_placement 4
+	max_distance_to_other_zones 2
+	terrain_to_place_on DIRT3
+	avoid_forest_zone 2
+}
+
+create_object STONE /* extra */
+{
+	number_of_objects 5
+	number_of_groups 999
+	group_variance 1
+	set_tight_grouping
+	group_placement_radius 3
+	set_gaia_object_only
+	set_scaling_to_map_size
+	min_distance_group_placement 2
+	temp_min_distance_group_placement 5
+	max_distance_to_other_zones 2
+	terrain_to_place_on DIRT2
+	avoid_forest_zone 3
+}
+
+create_object SKELETON {
+    number_of_objects 999
+    temp_min_distance_group_placement 30
+	min_distance_to_players 25
+    terrain_to_place_on DLC_SAVANNAH
+  }
+	
+create_object DLC_ANIMALSKELETON {
+    number_of_objects 999
+    temp_min_distance_group_placement 20
+	min_distance_to_players 25
+    terrain_to_place_on DLC_SAVANNAH
+  }
+
+  create_object STATUE {
+    number_of_objects 1
+    terrain_to_place_on DIRT2
+	avoid_forest_zone 3
+  }
+
+  create_object DLC_VASES {
+    number_of_objects 999
+    temp_min_distance_group_placement 70
+	min_distance_to_players 30
+    terrain_to_place_on DLC_SAVANNAH
+  }
+
+create_object RELIC
+{
+	number_of_objects 5
+	min_distance_to_players 28
+	temp_min_distance_group_placement 20
+	min_distance_group_placement 1   
+	terrain_to_place_on DLC_SAVANNAH
+	avoid_forest_zone 2
+}
+
+create_object DLC_ACACIATREE /* straggler trees */
+{
+	number_of_objects 3
+	set_gaia_object_only
+	set_place_for_every_player
+	min_distance_to_players 4
+	max_distance_to_players 5
+	min_distance_group_placement 2
+}
+
+if REGICIDE /* For Regicide */
+create_object VILLAGER
+{
+	number_of_objects 7
+	set_place_for_every_player
+	min_distance_to_players 6
+	max_distance_to_players 6
+}
+create_object KING
+{
+	set_place_for_every_player
+	min_distance_to_players 6
+	max_distance_to_players 6
+}
+create_object CASTLE
+{
+	set_place_for_every_player
+	min_distance_to_players 10
+	max_distance_to_players 10
+}
+endif
+
+
+
+
+
